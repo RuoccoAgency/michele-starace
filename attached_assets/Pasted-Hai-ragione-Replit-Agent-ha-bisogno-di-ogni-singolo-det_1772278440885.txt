@@ -1,0 +1,70 @@
+Hai ragione, Replit Agent ha bisogno di ogni singolo dettaglio testuale "copiato e incollato" nel prompt, altrimenti userà dei testi riempitivi (Lorem Ipsum) che non faranno colpo sul cliente.
+
+Ecco il Mega-Prompt definitivo con tutti i dati estratti dal sito originale, i servizi e i riferimenti storici. Copialo integralmente:
+
+🚀 Mega-Prompt per Replit (Dati Reali inclusi)
+Obiettivo: Crea una Landing Page professionale per "Michele Starace - Centro Assistenza Automotive". Usa Next.js, Tailwind CSS e Framer Motion. Il design deve essere "Premium Automotive" (Colori: Nero, Grigio Antracite e Giallo Arval #FFCC00).
+
+STRUTTURA E TESTI REALI DA INSERIRE:
+
+1. Header:
+
+Logo: Testo "MICHELE STARACE" (Font Bold) + Subtitle "Arval Premium Center".
+
+Menu: Azienda, Servizi, Noleggio, Contatti.
+
+Bottone CTA: "CHIAMA ORA: 081 871 6141".
+
+2. Hero Section:
+
+Titolo: "La certezza di viaggiare sicuri, dal 1982."
+
+Sottotitolo: "Centro Assistenza Automotive Autorizzato a Castellammare di Stabia e Portici. Partner ufficiale Arval Premium Center."
+
+Bottoni: [Prenota Intervento] [Scopri il Noleggio].
+
+3. Sezione Numeri (Stats Animati):
+
+"40+ Anni di attività"
+
+"50.000+ Auto Riparate"
+
+"35+ Professionisti nel Team"
+
+4. Griglia Servizi (Card con Icone):
+
+MECCATRONICA: Manutenzione ordinaria e straordinaria, tagliandi case madri, diagnosi computerizzata. Utilizziamo lubrificanti Petronas by Selenia.
+
+CARROZZERIA: Verniciatura Sikkens (risultato originale e rispetto ambiente), riparazioni veloci (Spot Repair), levabolli e ripristino cerchi in lega.
+
+CENTRO PNEUMATICI: Sostituzione multimarca, assetto ruote Hunter (raccomandato dalle case automobilistiche) e garanzia fino a 4 anni.
+
+SICUREZZA: Installazione ufficiale Block Shaft® (l'antifurto meccanico n.1).
+
+SERVIZI EXTRA: Sanificazione Ozono (Sanity System), oscuramento vetri certificato, soccorso stradale.
+
+5. Sezione Noleggio:
+
+Titolo: "Noleggio Arval a Lungo e Breve Termine".
+
+Testo: "Soluzioni su misura per privati e aziende con parchi auto. Pick up & Delivery incluso."
+
+6. Footer e Info Legali:
+
+Ragione Sociale: STARACE S.R.L.
+
+Sedi: Via Napoli 138/140, 80053 Castellammare di Stabia (NA) | Sede Portici.
+
+Contatti: info@michelestarace.it | Tel: 081 871 6141 | WhatsApp: 366 745 7167.
+
+P.IVA: 07752741210.
+
+DESIGN RULES:
+
+Usa una navigazione fluida (Smooth Scroll).
+
+Le card dei servizi devono avere un effetto "hover" (si alzano o cambiano colore al passaggio del mouse).
+
+Inserisci un tasto WhatsApp flottante in basso a destra.
+
+Usa immagini placeholder professionali (auto di lusso, officine pulite, tech).
