@@ -64,7 +64,7 @@
   --input: 0 0% 20%;
   --ring: 48 100% 50%;
 
-  --radius: 2rem;
+  --radius: 9999px;
 }
 
 @layer base {

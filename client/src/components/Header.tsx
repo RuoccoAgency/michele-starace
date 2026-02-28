@@ -54,7 +54,7 @@ export default function Header() {
 
         {/* Desktop CTA */}
         <div className="hidden md:flex">
-          <Button className="bg-primary text-black hover:bg-primary/90 font-bold tracking-wide flex items-center gap-2 rounded-none px-6">
+          <Button className="bg-primary text-black hover:bg-primary/90 font-bold tracking-wide flex items-center gap-2 rounded-full px-6">
             <Phone className="w-4 h-4" />
             CHIAMA ORA: 081 871 6141
           </Button>
@@ -86,7 +86,7 @@ export default function Header() {
               {link.name}
             </a>
           ))}
-          <Button className="bg-primary text-black hover:bg-primary/90 font-bold w-full flex items-center justify-center gap-2 rounded-none mt-4">
+          <Button className="bg-primary text-black hover:bg-primary/90 font-bold w-full flex items-center justify-center gap-2 rounded-full mt-4">
             <Phone className="w-4 h-4" />
             CHIAMA ORA: 081 871 6141
           </Button>

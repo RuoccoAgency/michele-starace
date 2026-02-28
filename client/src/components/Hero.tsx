@@ -66,11 +66,11 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            <Button className="bg-primary text-black hover:bg-white hover:text-black transition-all duration-300 font-bold h-14 px-8 rounded-none text-base flex items-center gap-2 group">
+            <Button className="bg-primary text-black hover:bg-white hover:text-black transition-all duration-300 font-bold h-14 px-8 rounded-full text-base flex items-center gap-2 group">
               Prenota Intervento
               <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button variant="outline" className="border-white/20 text-white hover:bg-white/10 hover:text-white transition-all duration-300 font-bold h-14 px-8 rounded-none text-base">
+            <Button variant="outline" className="border-white/20 text-white hover:bg-white/10 hover:text-white transition-all duration-300 font-bold h-14 px-8 rounded-full text-base">
               Scopri il Noleggio
             </Button>
           </motion.div>

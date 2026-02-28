@@ -47,7 +47,7 @@ export default function Rental() {
               ))}
             </ul>
 
-            <Button className="bg-white text-black hover:bg-primary transition-colors font-bold h-14 px-8 rounded-none text-base">
+            <Button className="bg-white text-black hover:bg-primary transition-colors font-bold h-14 px-8 rounded-full text-base">
               Richiedi Preventivo Noleggio
             </Button>
           </motion.div>
