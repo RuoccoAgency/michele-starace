@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -16,17 +17,17 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { name: "Azienda", href: "#azienda" },
-    { name: "Servizi", href: "#servizi" },
-    { name: "Noleggio", href: "#noleggio" },
-    { name: "Contatti", href: "#contatti" },
+    { name: "Azienda", href: "/" },
+    { name: "Chi Siamo", href: "/about" },
+    { name: "Servizi", href: "/#servizi" },
+    { name: "Noleggio", href: "/#noleggio" },
+    { name: "Contatti", href: "/#contatti" },
   ];
 
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-white/5 ${
-        isScrolled ? "bg-background/90 backdrop-blur-md py-4" : "bg-transparent py-6"
-      }`}
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-white/5 ${isScrolled ? "bg-background/90 backdrop-blur-md py-4" : "bg-transparent py-6"
+        }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         <div className="flex flex-col">
@@ -41,8 +42,8 @@ export default function Header() {
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a 
-              key={link.name} 
+            <a
+              key={link.name}
               href={link.href}
               className="text-sm font-medium text-white/80 hover:text-primary transition-colors uppercase tracking-wider"
             >
@@ -60,7 +61,7 @@ export default function Header() {
         </div>
 
         {/* Mobile Toggle */}
-        <button 
+        <button
           className="md:hidden text-white"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
@@ -70,14 +71,14 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           className="absolute top-full left-0 right-0 bg-background border-b border-white/10 py-6 px-6 flex flex-col gap-6 md:hidden"
         >
           {navLinks.map((link) => (
-            <a 
-              key={link.name} 
+            <a
+              key={link.name}
               href={link.href}
               className="text-lg font-medium text-white hover:text-primary transition-colors"
               onClick={() => setMobileMenuOpen(false)}
