@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-[90vh] flex items-center pt-20" id="azienda">
       {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/40 z-10" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
         <img 
@@ -15,6 +15,16 @@ export default function Hero() {
           alt="Premium Automotive Workshop" 
           className="w-full h-full object-cover opacity-60"
         />
+        
+        {/* Phantom Text Background for extra depth */}
+        <motion.div 
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.5, delay: 0.5 }}
+          className="absolute -bottom-10 left-0 text-[15vw] font-display font-black text-white/[0.03] select-none pointer-events-none whitespace-nowrap leading-none uppercase z-0"
+        >
+          EXPERIENCE
+        </motion.div>
       </div>
 
       <div className="container mx-auto px-6 relative z-20">
@@ -36,7 +46,7 @@ export default function Hero() {
             className="text-5xl md:text-7xl font-display font-black text-white leading-[1.1] mb-6"
           >
             La certezza di <br />
-            viaggiare <span className="text-primary">sicuri</span>,<br />
+            viaggiare <span className="text-gradient-gold animate-shine">sicuri</span>,<br />
             dal 1982.
           </motion.h1>
 
