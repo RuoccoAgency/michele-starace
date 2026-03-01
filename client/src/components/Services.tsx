@@ -1,73 +1,8 @@
-import { motion, AnimatePresence } from "framer-motion";
-import { Wrench, Car, CircleDot, ShieldCheck, PlusSquare, X } from "lucide-react";
-import { useState } from "react";
-
-const services = [
-  {
-    icon: Wrench,
-    title: "MECCATRONICA",
-    desc: "Manutenzione ordinaria e straordinaria, tagliandi case madri, diagnosi computerizzata. Utilizziamo lubrificanti Petronas by Selenia.",
-    details: [
-      "Manutenzione ordinaria e straordinaria per tutte le marche",
-      "Tagliandi ufficiali validi per la garanzia della casa madre",
-      "Diagnosi computerizzata con software di ultima generazione",
-      "Utilizzo esclusivo di lubrificanti Petronas by Selenia",
-      "Assistenza specializzata su veicoli ibridi ed elettrici"
-    ]
-  },
-  {
-    icon: Car,
-    title: "CARROZZERIA",
-    desc: "Verniciatura Sikkens (risultato originale e rispetto ambiente), riparazioni veloci (Spot Repair), levabolli e ripristino cerchi in lega.",
-    details: [
-      "Verniciatura professionale con prodotti Sikkens ecosostenibili",
-      "Spot Repair per riparazioni rapide in giornata",
-      "Servizio levabolli per danni da grandine o piccoli urti",
-      "Ripristino e verniciatura cerchi in lega",
-      "Gestione completa sinistri con tutte le assicurazioni"
-    ]
-  },
-  {
-    icon: CircleDot,
-    title: "CENTRO PNEUMATICI",
-    desc: "Sostituzione multimarca, assetto ruote Hunter (raccomandato dalle case automobilistiche) e garanzia fino a 4 anni.",
-    details: [
-      "Vendita e montaggio pneumatici delle migliori marche",
-      "Assetto ruote con tecnologia Hunter 3D",
-      "Equilibratura elettronica di precisione",
-      "Stoccaggio stagionale pneumatici",
-      "Garanzia Arval aggiuntiva fino a 4 anni"
-    ]
-  },
-  {
-    icon: ShieldCheck,
-    title: "SICUREZZA",
-    desc: "Installazione ufficiale Block Shaft® (l'antifurto meccanico n.1 in Italia).",
-    details: [
-      "Centro autorizzato installazione Block Shaft®",
-      "Sistemi di antifurto satellitare avanzati",
-      "Installazione Dash Cam e sensori di parcheggio",
-      "Check-up completo sistemi di sicurezza attiva",
-      "Certificazione ufficiale di installazione"
-    ]
-  },
-  {
-    icon: PlusSquare,
-    title: "SERVIZI EXTRA",
-    desc: "Sanificazione Ozono (Sanity System), oscuramento vetri certificato, soccorso stradale.",
-    details: [
-      "Sanificazione completa all'ozono con Sanity System",
-      "Oscuramento vetri con pellicole certificate e garantite",
-      "Soccorso stradale H24",
-      "Auto sostitutiva per interventi prolungati",
-      "Ritiro e consegna veicolo a domicilio"
-    ]
-  },
-];
+import { motion } from "framer-motion";
+import { Link } from "wouter";
+import { services } from "@/lib/services";
 
 export default function Services() {
-  const [selectedService, setSelectedService] = useState<number | null>(null);
-
   return (
     <section className="py-24 bg-card" id="servizi">
       <div className="container mx-auto px-6">
@@ -90,102 +25,44 @@ export default function Services() {
             ];
 
             return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                onClick={() => setSelectedService(index)}
-                className={`group glass-card p-8 min-h-[320px] relative overflow-hidden flex flex-col justify-between cursor-pointer ${bentoClasses[index] || ""}`}
-              >
-                {/* Visual Accent */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl -mr-16 -mt-16 group-hover:bg-primary/10 transition-colors duration-500" />
+              <Link key={service.id} href={`/servizi/${service.id}`}>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  whileHover={{ y: -5, transition: { duration: 0.2 } }}
+                  className={`group glass-card p-8 min-h-[320px] relative overflow-hidden flex flex-col justify-between cursor-pointer h-full ${bentoClasses[index] || ""}`}
+                >
+                  {/* Visual Accent */}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl -mr-16 -mt-16 group-hover:bg-primary/10 transition-colors duration-500" />
 
-                <div className="relative z-10">
-                  <div className="w-14 h-14 bg-primary/10 text-primary flex items-center justify-center mb-8 border border-primary/20 group-hover:bg-primary group-hover:text-black transition-all duration-500 rounded-xl">
-                    <service.icon className="w-6 h-6" />
+                  <div className="relative z-10">
+                    <div className="w-14 h-14 bg-primary/10 text-primary flex items-center justify-center mb-8 border border-primary/20 group-hover:bg-primary group-hover:text-black transition-all duration-500 rounded-xl">
+                      <service.icon className="w-6 h-6" />
+                    </div>
+
+                    <h4 className="text-2xl font-display font-black text-white mb-4 group-hover:text-primary transition-colors">
+                      {service.title}
+                    </h4>
+
+                    <p className="text-white/60 leading-relaxed group-hover:text-white/80 transition-colors text-lg">
+                      {service.desc}
+                    </p>
                   </div>
 
-                  <h4 className="text-2xl font-display font-black text-white mb-4 group-hover:text-primary transition-colors">
-                    {service.title}
-                  </h4>
+                  <div className="mt-8 flex items-center text-primary text-sm font-bold tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                    SCOPRI DI PIÙ
+                    <div className="ml-2 h-px w-8 bg-primary" />
+                  </div>
 
-                  <p className="text-white/60 leading-relaxed group-hover:text-white/80 transition-colors text-lg">
-                    {service.desc}
-                  </p>
-                </div>
-
-                <div className="mt-8 flex items-center text-primary text-sm font-bold tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                  SCOPRI DI PIÙ
-                  <div className="ml-2 h-px w-8 bg-primary" />
-                </div>
-
-                <div className="absolute bottom-0 left-0 h-1 bg-primary w-0 group-hover:w-full transition-all duration-700" />
-              </motion.div>
+                  <div className="absolute bottom-0 left-0 h-1 bg-primary w-0 group-hover:w-full transition-all duration-700" />
+                </motion.div>
+              </Link>
             );
           })}
         </div>
       </div>
-
-      {/* Modern Modal / Dialog */}
-      <AnimatePresence>
-        {selectedService !== null && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-background/80 backdrop-blur-xl">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="glass-card max-w-2xl w-full p-8 md:p-12 relative overflow-hidden rounded-[2rem]"
-            >
-              <button
-                onClick={() => setSelectedService(null)}
-                className="absolute top-6 right-6 text-white/40 hover:text-white transition-colors"
-                aria-label="Chiudi"
-              >
-                <X className="w-6 h-6" />
-              </button>
-
-              <div className="flex items-center gap-6 mb-8">
-                <div className="w-16 h-16 bg-primary text-black flex items-center justify-center rounded-2xl">
-                  {(() => {
-                    const Icon = services[selectedService].icon;
-                    return <Icon className="w-8 h-8" />;
-                  })()}
-                </div>
-                <h4 className="text-3xl font-display font-black text-white tracking-tight">
-                  {services[selectedService].title}
-                </h4>
-              </div>
-
-              <div className="space-y-4">
-                {services[selectedService].details?.map((detail, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.1 }}
-                    className="flex items-start gap-3"
-                  >
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 shrink-0" />
-                    <p className="text-white/70 text-lg leading-relaxed">{detail}</p>
-                  </motion.div>
-                ))}
-              </div>
-
-              <div className="mt-12">
-                <button
-                  onClick={() => setSelectedService(null)}
-                  className="w-full bg-primary text-black font-black py-5 rounded-full hover:bg-white transition-colors tracking-widest text-sm uppercase"
-                >
-                  Chiudi Dettagli
-                </button>
-              </div>
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
     </section>
   );
 }
