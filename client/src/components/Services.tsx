@@ -1,77 +1,48 @@
-import { motion, AnimatePresence } from "framer-motion";
-import { Wrench, Car, CircleDot, ShieldCheck, PlusSquare, X } from "lucide-react";
+import { motion } from "framer-motion";
+import { Wrench, Car, CircleDot, ShieldCheck, PlusSquare } from "lucide-react";
 import { useState } from "react";
+import { useLocation } from "wouter";
 
 const services = [
   {
     icon: Wrench,
+    id: "meccatronica",
     title: "MECCATRONICA",
     desc: "Manutenzione ordinaria e straordinaria, tagliandi case madri, diagnosi computerizzata. Utilizziamo lubrificanti Petronas by Selenia.",
-    image: "/src/assets/images/service-mechatronics.jpg",
-    details: [
-      "Manutenzione ordinaria e straordinaria per tutte le marche",
-      "Tagliandi ufficiali validi per la garanzia della casa madre",
-      "Diagnosi computerizzata con software di ultima generazione",
-      "Utilizzo esclusivo di lubrificanti Petronas by Selenia",
-      "Assistenza specializzata su veicoli ibridi ed elettrici"
-    ]
+    image: "/src/assets/images/service-mechatronics.jpg"
   },
   {
     icon: Car,
+    id: "carrozzeria",
     title: "CARROZZERIA",
     desc: "Verniciatura Sikkens (risultato originale e rispetto ambiente), riparazioni veloci (Spot Repair), levabolli e ripristino cerchi in lega.",
-    image: "/src/assets/images/service-bodywork.jpg",
-    details: [
-      "Verniciatura professionale con prodotti Sikkens ecosostenibili",
-      "Spot Repair per riparazioni rapide in giornata",
-      "Servizio levabolli per danni da grandine o piccoli urti",
-      "Ripristino e verniciatura cerchi in lega",
-      "Gestione completa sinistri con tutte le assicurazioni"
-    ]
+    image: "/src/assets/images/service-bodywork.jpg"
   },
   {
     icon: CircleDot,
+    id: "pneumatici",
     title: "CENTRO PNEUMATICI",
     desc: "Sostituzione multimarca, assetto ruote Hunter (raccomandato dalle case automobilistiche) e garanzia fino a 4 anni.",
-    image: "/src/assets/images/service-tyres.jpg",
-    details: [
-      "Vendita e montaggio pneumatici delle migliori marche",
-      "Assetto ruote con tecnologia Hunter 3D",
-      "Equilibratura elettronica di precisione",
-      "Stoccaggio stagionale pneumatici",
-      "Garanzia Arval aggiuntiva fino a 4 anni"
-    ]
+    image: "/src/assets/images/service-tyres.jpg"
   },
   {
     icon: ShieldCheck,
+    id: "sicurezza",
     title: "SICUREZZA",
     desc: "Installazione ufficiale Block Shaft® (l'antifurto meccanico n.1 in Italia).",
-    image: "/src/assets/images/service-security.jpg",
-    details: [
-      "Centro autorizzato installazione Block Shaft®",
-      "Sistemi di antifurto satellitare avanzati",
-      "Installazione Dash Cam e sensori di parcheggio",
-      "Check-up completo sistemi di sicurezza attiva",
-      "Certificazione ufficiale di installazione"
-    ]
+    image: "/src/assets/images/service-security.jpg"
   },
   {
     icon: PlusSquare,
+    id: "servizi-extra",
     title: "SERVIZI EXTRA",
     desc: "Sanificazione Ozono (Sanity System), oscuramento vetri certificato, soccorso stradale.",
-    image: "/src/assets/images/service-extra.jpg",
-    details: [
-      "Sanificazione completa all'ozono con Sanity System",
-      "Oscuramento vetri con pellicole certificate e garantite",
-      "Soccorso stradale H24",
-      "Auto sostitutiva per interventi prolungati",
-      "Ritiro e consegna veicolo a domicilio"
-    ]
+    image: "/src/assets/images/service-extra.jpg"
   },
 ];
 
 export default function Services() {
-  const [selectedService, setSelectedService] = useState<number | null>(null);
+  const [, setLocation] = useLocation();
 
   return (
     <section className="py-24 bg-card" id="servizi">
@@ -102,7 +73,7 @@ export default function Services() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                onClick={() => setSelectedService(index)}
+                onClick={() => setLocation(`/servizi/${service.id}`)}
                 className={`group glass-card min-h-[350px] relative overflow-hidden flex flex-col cursor-pointer rounded-2xl ${bentoClasses[index] || ""}`}
               >
                 {/* Image Background */}
@@ -142,64 +113,6 @@ export default function Services() {
           })}
         </div>
       </div>
-
-      {/* Modern Modal / Dialog */}
-      <AnimatePresence>
-        {selectedService !== null && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-background/80 backdrop-blur-xl">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="glass-card max-w-2xl w-full p-8 md:p-12 relative overflow-hidden rounded-[2rem]"
-            >
-              <button
-                onClick={() => setSelectedService(null)}
-                className="absolute top-6 right-6 text-white/40 hover:text-white transition-colors"
-                aria-label="Chiudi"
-              >
-                <X className="w-6 h-6" />
-              </button>
-
-              <div className="flex items-center gap-6 mb-8">
-                <div className="w-16 h-16 bg-primary text-black flex items-center justify-center rounded-2xl">
-                  {(() => {
-                    const Icon = services[selectedService].icon;
-                    return <Icon className="w-8 h-8" />;
-                  })()}
-                </div>
-                <h4 className="text-3xl font-display font-black text-white tracking-tight">
-                  {services[selectedService].title}
-                </h4>
-              </div>
-
-              <div className="space-y-4">
-                {services[selectedService].details?.map((detail, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.1 }}
-                    className="flex items-start gap-3"
-                  >
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 shrink-0" />
-                    <p className="text-white/70 text-lg leading-relaxed">{detail}</p>
-                  </motion.div>
-                ))}
-              </div>
-
-              <div className="mt-12">
-                <button
-                  onClick={() => setSelectedService(null)}
-                  className="w-full bg-primary text-black font-black py-5 rounded-full hover:bg-white transition-colors tracking-widest text-sm uppercase"
-                >
-                  Chiudi Dettagli
-                </button>
-              </div>
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
     </section>
   );
 }
