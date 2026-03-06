@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import heroBg from "@/assets/images/hero-bg.jpg";
+import heroBg from "@/assets/images/hero-bg.png";
 import { ChevronRight } from "lucide-react";
 
 export default function Hero() {

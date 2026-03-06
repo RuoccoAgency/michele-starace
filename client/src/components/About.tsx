@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import aboutImg from "@/assets/images/about-workshop.jpg";
+import aboutImg from "@/assets/images/about-workshop.png";
 import { Award, Users, CheckCircle2, History } from "lucide-react";
 
 export default function About() {

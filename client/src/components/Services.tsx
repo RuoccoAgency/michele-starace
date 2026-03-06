@@ -9,35 +9,35 @@ const services = [
     id: "meccatronica",
     title: "MECCATRONICA",
     desc: "Manutenzione ordinaria e straordinaria, tagliandi case madri, diagnosi computerizzata. Utilizziamo lubrificanti Petronas by Selenia.",
-    image: "/src/assets/images/service-mechatronics.jpg"
+    image: "/src/assets/images/service-mechatronics.png"
   },
   {
     icon: Car,
     id: "carrozzeria",
     title: "CARROZZERIA",
     desc: "Verniciatura Sikkens (risultato originale e rispetto ambiente), riparazioni veloci (Spot Repair), levabolli e ripristino cerchi in lega.",
-    image: "/src/assets/images/service-bodywork.jpg"
+    image: "/src/assets/images/service-bodywork.png"
   },
   {
     icon: CircleDot,
     id: "pneumatici",
     title: "CENTRO PNEUMATICI",
     desc: "Sostituzione multimarca, assetto ruote Hunter (raccomandato dalle case automobilistiche) e garanzia fino a 4 anni.",
-    image: "/src/assets/images/service-tyres.jpg"
+    image: "/src/assets/images/service-tyres.png"
   },
   {
     icon: ShieldCheck,
     id: "sicurezza",
     title: "SICUREZZA",
     desc: "Installazione ufficiale Block Shaft® (l'antifurto meccanico n.1 in Italia).",
-    image: "/src/assets/images/service-security.jpg"
+    image: "/src/assets/images/service-security.png"
   },
   {
     icon: PlusSquare,
     id: "servizi-extra",
     title: "SERVIZI EXTRA",
     desc: "Sanificazione Ozono (Sanity System), oscuramento vetri certificato, soccorso stradale.",
-    image: "/src/assets/images/service-extra.jpg"
+    image: "/src/assets/images/service-extra.png"
   },
 ];
 

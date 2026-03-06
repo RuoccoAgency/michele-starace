@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import rentalBg from "@/assets/images/rental-bg.jpg";
+import rentalBg from "@/assets/images/rental-bg.png";
 import { Check } from "lucide-react";
 
 export default function Rental() {
