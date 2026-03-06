@@ -8,7 +8,7 @@ export default function Services() {
     <section className="py-24 bg-card" id="servizi">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-primary font-bold tracking-widest text-sm mb-3">LE NOSTRE COMPETENZE</h2>
+          <h2 className="text-primary font-bold tracking-widest text-sm mb-3 uppercase">LE NOSTRE COMPETENZE</h2>
           <h3 className="text-4xl md:text-5xl font-display font-black text-white mb-6">Eccellenza a 360°</h3>
           <p className="text-white/60 text-lg">
             Da oltre 40 anni offriamo servizi di assistenza automotive con tecnologie all'avanguardia.

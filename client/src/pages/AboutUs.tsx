@@ -41,7 +41,7 @@ export default function AboutUs() {
                         >
                             <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent z-10" />
                             <img
-                                src="https://images.unsplash.com/photo-1486006396193-471a2abc881a?auto=format&fit=crop&q=80"
+                                src="/src/assets/images/about-workshop.png"
                                 alt="Workshop History"
                                 className="w-full h-full object-cover rounded-2xl"
                             />
