@@ -1,4 +1,9 @@
 import { Wrench, Car, CircleDot, ShieldCheck, PlusSquare } from "lucide-react";
+import mechatronicsImg from "@/assets/images/service-mechatronics.jpg";
+import bodyworkImg from "@/assets/images/service-bodywork.jpg";
+import tyresImg from "@/assets/images/service-tyres.jpg";
+import securityImg from "@/assets/images/service-security.jpg";
+import extraImg from "@/assets/images/service-extra.jpg";
 
 export type Service = {
     id: string;
@@ -17,7 +22,7 @@ export const services: Service[] = [
         title: "MECCATRONICA",
         desc: "Manutenzione ordinaria e straordinaria, tagliandi case madri, diagnosi computerizzata. Utilizziamo lubrificanti Petronas by Selenia.",
         fullDesc: "Il nostro reparto di meccatronica rappresenta il cuore tecnologico di Michele Starace. Grazie a strumentazioni di diagnosi all'avanguardia e a un team costantemente aggiornato, siamo in grado di intervenire su qualsiasi tipologia di guasto elettronico o meccanico, garantendo standard qualitativi d'eccellenza.",
-        image: "/src/assets/images/service-mechatronics.jpg",
+        image: mechatronicsImg,
         details: [
             "Manutenzione ordinaria e straordinaria per tutte le marche",
             "Tagliandi ufficiali validi per la garanzia della casa madre",
@@ -33,7 +38,7 @@ export const services: Service[] = [
         title: "CARROZZERIA",
         desc: "Verniciatura Sikkens (risultato originale e rispetto ambiente), riparazioni veloci (Spot Repair), levabolli e ripristino cerchi in lega.",
         fullDesc: "La nostra carrozzeria combina l'arte della riparazione tradizionale con le più moderne tecnologie di verniciatura. Utilizziamo prodotti Sikkens per garantire una finitura identica all'originale, rispettando l'ambiente e assicurando una durata eccezionale nel tempo.",
-        image: "/src/assets/images/service-bodywork.jpg",
+        image: bodyworkImg,
         details: [
             "Verniciatura professionale con prodotti Sikkens ecosostenibili",
             "Spot Repair per riparazioni rapide in giornata",
@@ -49,7 +54,7 @@ export const services: Service[] = [
         title: "CENTRO PNEUMATICI",
         desc: "Sostituzione multimarca, assetto ruote Hunter (raccomandato dalle case automobilistiche) e garanzia fino a 4 anni.",
         fullDesc: "Come partner Arval Premium Center, offriamo un servizio pneumatici completo. Dalla scelta del battistrada più adatto al tuo stile di guida all'assetto ruote di precisione con tecnologia Hunter, ci prendiamo cura dell'unico punto di contatto tra la tua auto e la strada.",
-        image: "/src/assets/images/service-tyres.jpg",
+        image: tyresImg,
         details: [
             "Vendita e montaggio pneumatici delle migliori marche",
             "Assetto ruote con tecnologia Hunter 3D",
@@ -65,7 +70,7 @@ export const services: Service[] = [
         title: "SICUREZZA",
         desc: "Installazione ufficiale Block Shaft® (l'antifurto meccanico n.1 in Italia).",
         fullDesc: "La tua tranquillità è la nostra priorità. Siamo centro autorizzato per l'installazione di Block Shaft®, il sistema antifurto meccanico più sicuro sul mercato, integrando inoltre le migliori soluzioni elettroniche e satellitari per la protezione del tuo veicolo.",
-        image: "/src/assets/images/service-security.jpg",
+        image: securityImg,
         details: [
             "Centro autorizzato installazione Block Shaft®",
             "Sistemi di antifurto satellitare avanzati",
@@ -81,7 +86,7 @@ export const services: Service[] = [
         title: "SERVIZI EXTRA",
         desc: "Sanificazione Ozono (Sanity System), oscuramento vetri certificato, soccorso stradale.",
         fullDesc: "Oltre alla meccanica e alla carrozzeria, offriamo una serie di servizi accessori pensati per migliorare il comfort e la longevità della tua auto. Dalla sanificazione certificata all'oscuramento vetri, ogni dettaglio è curato con la massima professionalità.",
-        image: "/src/assets/images/service-extra.jpg",
+        image: extraImg,
         details: [
             "Sanificazione completa all'ozono con Sanity System",
             "Oscuramento vetri con pellicole certificate e garantite",
@@ -92,4 +97,3 @@ export const services: Service[] = [
         ]
     },
 ];
-

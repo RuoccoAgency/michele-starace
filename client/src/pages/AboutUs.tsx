@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { History, Shield, Award, Users } from "lucide-react";
+import aboutImg from "@/assets/images/about-workshop.jpg";
+
 
 export default function AboutUs() {
     return (
@@ -41,10 +43,11 @@ export default function AboutUs() {
                         >
                             <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent z-10" />
                             <img
-                                src="/src/assets/images/about-workshop.png"
+                                src={aboutImg}
                                 alt="Workshop History"
                                 className="w-full h-full object-cover rounded-2xl"
                             />
+
                         </motion.div>
 
                         <div className="space-y-8">
