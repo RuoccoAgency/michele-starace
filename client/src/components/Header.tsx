@@ -42,13 +42,13 @@ export default function Header() {
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-white/80 hover:text-primary transition-colors uppercase tracking-wider"
+              className="text-sm font-medium text-white/80 hover:text-primary transition-colors uppercase tracking-wider cursor-pointer"
             >
               {link.name}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -77,14 +77,14 @@ export default function Header() {
           className="absolute top-full left-0 right-0 bg-background border-b border-white/10 py-6 px-6 flex flex-col gap-6 md:hidden"
         >
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.name}
               href={link.href}
-              className="text-lg font-medium text-white hover:text-primary transition-colors"
+              className="text-lg font-medium text-white hover:text-primary transition-colors cursor-pointer"
               onClick={() => setMobileMenuOpen(false)}
             >
               {link.name}
-            </a>
+            </Link>
           ))}
           <Button className="bg-primary text-black hover:bg-primary/90 font-bold w-full flex items-center justify-center gap-2 rounded-full mt-4">
             <Phone className="w-4 h-4" />
